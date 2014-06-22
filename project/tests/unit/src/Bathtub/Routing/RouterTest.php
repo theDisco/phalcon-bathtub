@@ -1,6 +1,6 @@
 <?php
 
-namespace Bathtub;
+namespace Bathtub\Routing;
 
 use Mockery;
 
@@ -28,12 +28,12 @@ class RouterTest extends \PHPUnit_Framework_TestCase
     {
         $router = new Router(self::getRouteAwereMock());
         $actualRouterAware = $router->registerRoutes(self::$testRoutes);
-        $this->assertInstanceOf('\Bathtub\RouteAware', $actualRouterAware);
+        $this->assertInstanceOf('\Bathtub\Routing\RouteAware', $actualRouterAware);
     }
 
     public function testFailOnConfigurationError()
     {
-        $this->setExpectedException('\Bathtub\RouterException', 'Unsupported http method: not_supported');
+        $this->setExpectedException('\Bathtub\Routing\RouterException', 'Unsupported http method: not_supported');
         $router = new Router(self::getRouteAwereMock(false));
         $router->registerRoutes([
             'not_supported' => [

@@ -9,11 +9,12 @@ use Phalcon\Mvc\Application;
 use Phalcon\Mvc\Router;
 use Phalcon\DI\FactoryDefault;
 
-$di = new FactoryDefault();
-$di->setShared('router', function() use($config) {
-    return (new \Bathtub\Router(new \Bathtub\Phalcon\Router()))
-        ->registerRoutes($config->get('routes')->toArray());
-});
+$di = new \Bathtub\Phalcon\DependencyInjection();
+$router = new \Bathtub\Service\Router(
+    new \Bathtub\Phalcon\Router(),
+    $config->get('routes')->toArray()
+);
+$router->registerTo($di);
 
 try {
     $application = new Application($di);

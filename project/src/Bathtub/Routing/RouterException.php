@@ -1,6 +1,6 @@
 <?php
 
-namespace Bathtub;
+namespace Bathtub\Routing;
 
 class RouterException extends \Exception
 {}

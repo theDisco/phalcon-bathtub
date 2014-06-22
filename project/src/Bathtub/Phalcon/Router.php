@@ -2,7 +2,7 @@
 
 namespace Bathtub\Phalcon;
 
-use Bathtub\RouteAware;
+use Bathtub\Routing\RouteAware;
 
 class Router extends \Phalcon\Mvc\Router implements RouteAware
 {}
