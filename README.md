@@ -15,6 +15,8 @@ at the configuration file and adjust the setting to fit your requirements.
 Configuration
 =============
 
+Configuration file for salt is located under `salt/pillar/config.sls`.
+
 Project config defines two settings. `project_name` is currently only
 used for nginx log names. In the future the development environment
 is planned to be more project centric, with folder structure and database
