@@ -1,0 +1,2 @@
+file_client: local
+mysql.default_file: /etc/mysql/debian.cnf
